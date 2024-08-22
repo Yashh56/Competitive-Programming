@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int findComplement(int num) {
+        if(num==1){
+            return 0;
+        }
+        unsigned int mask = ~0;
+
+        while(num & mask){
+            mask<<=1;
+        }
+
+        return ~mask & ~num;
+    }
+};
